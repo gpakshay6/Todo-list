@@ -1,4 +1,6 @@
 import React from "react"
+import AOS from "aos"
+import "aos/dist/aos.css"
 import "../src/style.css"
 
 export default class TodoList extends React.Component {
@@ -96,7 +98,7 @@ export default class TodoList extends React.Component {
   }
 
   componentDidMount() {
-    this.nameInput.focus()
+    AOS.init({ duration: 2000 })
   }
 
   render() {
@@ -116,7 +118,6 @@ export default class TodoList extends React.Component {
                     className="btn btn-primary"
                     type="button"
                     onClick={() => this.handleEdit(i)}
-                    ref={this.nameInput.focus()}
                   >
                     Edit
                   </button>
@@ -162,7 +163,7 @@ export default class TodoList extends React.Component {
                 alt="Avatar"
                 className="image"
               />
-              <div className="overlay">
+              <div data-aos="fade-right" className="overlay">
                 <div className="task-list">
                   <div className="row">
                     <div className="col-12">
