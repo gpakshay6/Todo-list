@@ -108,7 +108,7 @@ export default class TodoList extends React.Component {
       return (
         <tr key={i}>
           <th>{i + 1}</th>
-          <td>{ele.val}</td>
+          <td className="overflow-ellipsis">{ele.val}</td>
           <td>{ele.t}</td>
           <td>
             <div className="container">
@@ -154,44 +154,46 @@ export default class TodoList extends React.Component {
     })
 
     return (
-      <div className="mainDiv">
-        <div className="container">
+        <div className="container-fluid">
           <div className="row">
-            <div className="col-lg-10 col-md-8 col-sm-6 col-6 mt-5">
+            <div className="col-lg-8 col-md-8 col-sm-12 col-12">
               <img
                 src="https://cdn.pixabay.com/photo/2017/08/30/07/56/clock-2696234_960_720.jpg"
                 alt="Avatar"
-                className="image"
+                className="image img-fluid"
               />
+            </div>
+            <div className="col-lg-4 col-md-4 col-sm-12 col-12 d-flex justify-content-lg-start justify-content-md-start justify-content-sm-start justify-content-center align-items-center">
+              <div className="text">
+                <h1>Time Management</h1>
+                <p>
+                Time management is not about finding more time, it's about making the most of the time we have. It's the art of balancing priorities, focusing on what truly matters, and efficiently allocating our finite resources of time and energy towards our goals and aspirations.
+                </p>
+              </div>
+            </div>
+            <div className="col-lg-12 col-md-12 col-sm-12 col-12 mt-5">
               <div data-aos="fade-right" className="overlay">
                 <div className="task-list">
+                  <h1>Today's Events!!!</h1>
                   <div className="row">
-                    <div className="col-12">
-                      <h1>Today's Events!!!</h1>
-                    </div>
-
-                    <div className="col-lg-6 col-md-12 col-sm-12 col-12 mt-5 d-flex justify-content-lg-end justify-content-center align-items-center">
+                    <div className="col-lg-6 col-md-6 col-sm-12 col-12 mt-3">
                       <input
-                        className="inpBox"
+                        className="inpBox form-control"
                         type="text"
                         value={this.state.value}
                         onChange={this.handleValue}
                         placeholder="Add tasks.."
-                        ref={(input) => {
-                          this.nameInput = input
-                        }}
+                        ref={(input) => { this.nameInput = input }}
                       />
                     </div>
-
-                    <div className="col-lg-2 col-md-12 col-sm-12 col-12 col-sm-12 mt-lg-0 mt-4 d-flex justify-content-lg-between justify-content-center  align-items-end">
+                    <div className="col-lg-6 col-md-6 col-sm-12 col-12 mt-3 d-flex justify-content-lg-end justify-content-md-start">
                       <button
-                        className="btn btn-primary updateBtn"
+                        className="btn btn-primary updateBtn mr-2"
                         type="button"
                         onClick={this.handleItems}
                       >
                         Add
                       </button>
-
                       <button
                         className="btn btn-primary updateBtn"
                         type="button"
@@ -200,35 +202,24 @@ export default class TodoList extends React.Component {
                         Update
                       </button>
                     </div>
-
-                    <table className="table table-dark mt-5 w-100">
-                      <thead>
-                        <tr>
-                          <th scope="col">#</th>
-                          <th scope="col">Task</th>
-                          <th></th>
-                          <th scope="col">Operations</th>
-                        </tr>
-                      </thead>
-                      <tbody>{data}</tbody>
-                    </table>
                   </div>
+                  <table className="table table-dark mt-5 w-100">
+                    <thead>
+                      <tr>
+                        <th scope="col">Sl no.</th>
+                        <th scope="col">Todo</th>
+                        <th></th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>{data}</tbody>
+                  </table>
                 </div>
-              </div>
-            </div>
-            <div className="col-lg-2 col-md-4 col-sm-6 col-6 mt-5 d-flex justify-content-lg-start justify-content-md-start justify-content-sm-start justify-content-center align-items-center">
-              <div className="text">
-                <h1>Time Management</h1>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae
-                  voluptatibus asperiores illo obcaecati? Cum eveniet error
-                  magni sequi esse excepturi.
-                </p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    )
+    );
+    
   }
 }
