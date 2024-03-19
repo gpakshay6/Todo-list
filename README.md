@@ -8,12 +8,12 @@
 
 ### Technology Stack
 
-**Bootstrap-4** (Material-UI): SwiftTask-Hub utilizes Material-UI for its styling, offering a sleek and modern user interface.
+**Bootstrap-4**: Todo-List utilizes Bootstrap-4 for its styling.
 
 ### Usage
 
 1. Clone the repository:
-   `git clone https://github.com/gpakshay6/SwiftTask-Hub.git`
+   `git clone https://github.com/gpakshay6/Todo-list.git`
 
 2. Install dependencies:
    `npm install`
@@ -25,7 +25,7 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 **Contributing**
-Contributions to SwiftTask-Hub are welcome!.
+Contributions to Todo-List are welcome!.
 
 **License**
 This project is licensed under the MIT License.
